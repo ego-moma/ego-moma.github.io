@@ -121,8 +121,7 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Georgia Institute of Technology</span>
             <p class="is-size-6 has-text-grey">
-              <sup>*</sup> equal contributions &nbsp;&nbsp;
-              <sup>†</sup> equal contributions
+              <sup>*,†</sup> equal contributions
             </p> 
           </div>
 
@@ -185,7 +184,7 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -257,7 +256,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -268,32 +267,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Scaling mobile manipulation imitation learning is bottlenecked by expensive mobile robot teleoperation. 
+            We present Egocentric Mobile Manipulation (EMMA), an end-to-end framework training mobile manipulation 
+            policies from human mobile manipulation data with static robot data, sidestepping mobile teleoperation. 
+            To accomplish this, we co-train the human full-body motion data with the static robot data. In our experiments 
+            across three real-world tasks, EMMA demonstrates comparable performance to baselines trained on teleoperated 
+            mobile robot data (Mobile ALOHA), achieving higher or equivalent task performance in full task success with 
+            significantly less data. We find that EMMA is able to generalize to new spatial configurations and scenes, 
+            and we observe positive performance scaling as we increase the hours of human data, opening new avenues for 
+            scalable robotic learning in real-world environments.
           </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
+
         </div>
       </div>
     </div>
