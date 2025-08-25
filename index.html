@@ -279,9 +279,8 @@
 
     <!-- Method Teaser Video -->
     <div class="has-text-centered" style="margin-top: 2rem;">
-      <video controls width="100%" height="auto">
+      <video poster="" autoplay muted controls loop height="100%">
         <source src="./static/videos/method_teaser.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
     </div>
     <p>
@@ -310,22 +309,83 @@
       </video>
     </div>
 
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h3 class="title is-3 has-text-centered">Retargeting</h3>
-        <figure class="has-text-centered">
-          <img src="./static/figures/retargeting.jpg" alt="Retargeting figure" style="width: 100%; height: auto;"/>
-          <figcaption class="has-text-grey is-size-6">
-            Given a 3D pose trajectory from a human demonstration, we optimize Eq. (retargeting) to compute a feasible 2D trajectory for a differential drive robot. This resulting trajectory can be directly executed by the robot or used as input for policy learning.
-          </figcaption>
-        </figure>
+      <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <h3 class="title is-3 has-text-centered">Retargeting</h3>
+      <figure class="has-text-centered">
+        <img src="./static/figures/retargeting.jpg" alt="Retargeting figure" style="width: 100%; height: auto;"/>
+        <figcaption class="has-text-grey is-size-6">
+          Given a 3D pose trajectory from a human demonstration, we optimize Eq. (retargeting) to compute a feasible 2D trajectory for a differential drive robot. This resulting trajectory can be directly executed by the robot or used as input for policy learning.
+        </figcaption>
+      </figure>
+      <div class="has-text-centered" style="margin-top: 2rem;">
+        <video poster="" autoplay muted controls loop height="100%">
+          <source src="./static/videos/retargeting_teaser.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
+          <br>
+          <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: In-domain Performance</span></h3>
+
+          <div class="results-carousel" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="item active" data-description="Continuous object-in-bowl: the robot continuously picks a small toy, places it in a bowl, and resets the scene.">
+              <video autoplay muted loop>
+                <source src="static/videos/deliver_groceries.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item" data-description="Groceries: the robot picks a shopping bag via a thin handle and places all the chips inside.">
+              <video autoplay muted loop>
+                <source src="static/videos/handover_wine_lab.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item" data-description="Serve Croissant: the robot places a croissant on a plate.">
+              <video autoplay muted loop>
+                <source src="static/videos/serve_croissant_lab.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div id="video-description" style="font-size: 110%; text-align: center; margin-top: 15px;">
+              <b>(a) Continuous object-in-bowl:</b> the robot continuously picks a small toy, places it in a bowl, and resets the scene.
+            </div>
+
+            <div class="carousel-dots">
+              <span class="dot" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+            </div>
+
+            <div class="carousel-controls" style="margin-top: 10px;">
+                <button id="prev-btn" class="carousel-nav prev-button">
+                    <span class="icon is-large"><i class="fas fa-chevron-left"></i></span>
+                </button>
+                <button id="next-btn" class="carousel-nav next-button">
+                    <span class="icon is-large"><i class="fas fa-chevron-right"></i></span>
+                </button>
+            </div>
+
+          </div>
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+        <img src="static/images/scenegengraph.png" alt="" 
+        style="display: block; margin-left: auto; margin-right: auto; width: 70%; height: auto;" />
+        <br>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
       </div>
     </div>
   </div>
 </section>
-
-
-
 
 
 <section class="section" id="BibTeX">
