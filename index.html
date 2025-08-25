@@ -242,31 +242,6 @@
 
 <section class="section">
 
-  <!-- Video slider (no progress bar) -->
-  <div class="video-slider" id="emma-video-slider">
-    <div class="track">
-      <div class="slide">
-        <video playsinline muted loop preload="metadata" src="./static/videos/deliver_groceries.mp4"></video>
-      </div>
-      <div class="slide">
-        <video playsinline muted loop preload="metadata" src="./static/videos/handover_wine_lab.mp4"></video>
-      </div>
-      <div class="slide">
-        <video playsinline muted loop preload="metadata" src="./static/videos/handover_wine_sceneGen.mp4"></video>
-      </div>
-      <div class="slide">
-        <video playsinline muted loop preload="metadata" src="./static/videos/retargeting_teaser.mp4"></video>
-      </div>
-      <div class="slide">
-        <video playsinline muted loop preload="metadata" src="./static/videos/serve_croissant_lab.mp4"></video>
-      </div>
-    </div>
-
-    <button class="arrow prev" aria-label="Previous">‹</button>
-    <button class="arrow next" aria-label="Next">›</button>
-  </div>
-
-
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -318,6 +293,9 @@
 
         <figure class="has-text-centered">
           <img src="./static/figures/method_fig.jpg" alt="Method figure" style="width: 100%; height: auto;"/>
+          <figcaption class="has-text-grey is-size-6">
+            Left: Architecture of joint human-robot policy learning framework. Our model processes heterogeneous human and robot data through <em>stems</em> and decodes them through various action <em>heads</em>. The navigation head is deployed on the robot during evaluation, demonstrating transfer without robot supervision. Right: Our custom low-cost bimanual mobile manipulator.
+          </figcaption>
         </figure>
         
         
@@ -337,7 +315,9 @@
         <h3 class="title is-3 has-text-centered">Retargeting</h3>
         <figure class="has-text-centered">
           <img src="./static/figures/retargeting.jpg" alt="Retargeting figure" style="width: 100%; height: auto;"/>
-
+          <figcaption class="has-text-grey is-size-6">
+            Given a 3D pose trajectory from a human demonstration, we optimize Eq. (retargeting) to compute a feasible 2D trajectory for a differential drive robot. This resulting trajectory can be directly executed by the robot or used as input for policy learning.
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -351,11 +331,7 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{PLACEHOLDER
 }</code></pre>
   </div>
 </section>
