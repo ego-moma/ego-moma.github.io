@@ -76,3 +76,54 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
+
+
+(function initVideoSlider() {
+  const slider = document.getElementById('emma-video-slider');
+  if (!slider) return;
+
+  const track = slider.querySelector('.track');
+  const slides = Array.from(slider.querySelectorAll('.slide'));
+  const videos = slides.map(s => s.querySelector('video'));
+  const prev = slider.querySelector('.prev');
+  const next = slider.querySelector('.next');
+
+  let index = 0;
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    // Pause all; play current
+    videos.forEach((v, k) => {
+      if (k === index) {
+        v.play().catch(() => {}); // muted autoplay should succeed
+      } else {
+        v.pause();
+        v.currentTime = 0; // optional: reset for a fresh look
+      }
+    });
+  }
+
+  prev.addEventListener('click', () => goTo(index - 1));
+  next.addEventListener('click', () => goTo(index + 1));
+
+  // Keyboard arrows
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prev.click();
+    if (e.key === 'ArrowRight') next.click();
+  });
+
+  // Basic swipe on touch
+  let startX = null;
+  track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', (e) => {
+    if (startX == null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) (dx > 0 ? prev : next).click();
+    startX = null;
+  });
+
+  // Autoplay the first slide on load
+  goTo(0);
+})();

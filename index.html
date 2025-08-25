@@ -242,15 +242,30 @@
 
 <section class="section">
 
-  <div class="slider-container">
-    <div class="slides">
-      <img src="./static/images/method_teaser.mp4" class="slide" />
-      <img src="./static/images/retargeting_teaser.mp4" class="slide" />
-      <!-- more images -->
+  <!-- Video slider (no progress bar) -->
+  <div class="video-slider" id="emma-video-slider">
+    <div class="track">
+      <div class="slide">
+        <video playsinline muted loop preload="metadata" src="./static/videos/deliver_groceries.mp4"></video>
+      </div>
+      <div class="slide">
+        <video playsinline muted loop preload="metadata" src="./static/videos/handover_wine_lab.mp4"></video>
+      </div>
+      <div class="slide">
+        <video playsinline muted loop preload="metadata" src="./static/videos/handover_wine_sceneGen.mp4"></video>
+      </div>
+      <div class="slide">
+        <video playsinline muted loop preload="metadata" src="./static/videos/retargeting_teaser.mp4"></video>
+      </div>
+      <div class="slide">
+        <video playsinline muted loop preload="metadata" src="./static/videos/serve_croissant_lab.mp4"></video>
+      </div>
     </div>
-    <button class="arrow prev">&lt;</button>
-    <button class="arrow next">&gt;</button>
+
+    <button class="arrow prev" aria-label="Previous">‹</button>
+    <button class="arrow next" aria-label="Next">›</button>
   </div>
+
 
   <div class="container is-max-desktop">
     <!-- Abstract. -->
