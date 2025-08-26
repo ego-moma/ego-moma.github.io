@@ -332,6 +332,68 @@
 
 
 
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
+          <br>
+          <!-- Carousel of Videos and Buttons -->
+          <div class="results-carousel" style="display: flex; flex-direction: column; align-items: center;">
+
+            <!-- Video and description container -->
+            <div class="item active" data-description="Handover Wine (SceneGen)">
+              <video autoplay muted loop>
+                <source src="static/videos/handover_wine_sceneGen.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item" data-description="Serve Croissant (Lab)">
+              <video autoplay muted loop>
+                <source src="static/videos/serve_croissant_lab.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item" data-description="Handover Wine (Lab)">
+              <video autoplay muted loop>
+                <source src="static/videos/handover_wine_lab.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item" data-description="Deliver Groceries">
+              <video autoplay muted loop>
+                <source src="static/videos/deliver_groceries.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <!-- Description text -->
+            <div id="video-description" style="font-size: 110%; text-align: center; margin-top: 15px;">
+              Handover Wine (SceneGen)
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="carousel-dots">
+              <span class="dot" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+            </div>
+        
+            <!-- Navigation Buttons -->
+            <div class="carousel-controls" style="margin-top: 10px;">
+                <button id="prev-btn" class="carousel-nav prev-button">
+                    <span class="icon is-large"><i class="fas fa-chevron-left"></i></span>
+                </button>
+                <button id="next-btn" class="carousel-nav next-button">
+                    <span class="icon is-large"><i class="fas fa-chevron-right"></i></span>
+                </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -343,35 +405,186 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
+      <div class="column">
+        <div class="content has-text-centered">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>, <a
+              href="https://peract.github.io/">PerAct</a> and <a href="https://egomimic.github.io">EgoMimic</a>.
           </p>
         </div>
       </div>
     </div>
   </div>
 </footer>
+
+
+<!-- Custom Script for Button-based Carousel -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.item');
+    const taskDescriptions = [
+      "<b>(a) Continuous object-in-bowl:</b> the robot continuously picks a small toy, places it in a bowl, and resets the scene.",
+      "<b>(b) Groceries:</b> the robot picks a shopping bag via a thin handle and places all the chips inside.",
+      "<b>(c) Laundry:</b> the robot folds a polo shirt placed randomly on the table."
+    ];
+
+    let currentIndex = 0;
+    const taskDescriptionEl = document.getElementById('taskDescription');
+    
+    // Function to show the active video and hide others
+    function showVideo(index) {
+      items.forEach((item, i) => {
+        if (i === index) {
+          item.style.display = 'block';  // Show active item
+        } else {
+          item.style.display = 'none';   // Hide inactive items
+        }
+      });
+      // Update task description
+      taskDescriptionEl.innerHTML = taskDescriptions[index];
+    }
+
+    // Button event listeners
+    document.getElementById('prevBtn').addEventListener('click', function () {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;  // Move backward
+      showVideo(currentIndex);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', function () {
+      currentIndex = (currentIndex + 1) % items.length;  // Move forward
+      showVideo(currentIndex);
+    });
+
+    // Initialize the first video
+    showVideo(currentIndex);
+  });
+</script>
+
+<!-- Basic Styling to ensure all videos are controlled and responsive -->
+<style>
+  .carousel .item {
+    display: none;  /* Hide all videos initially */
+  }
+
+  .carousel .item video {
+    width: 70%;  /* Make the videos smaller */
+    max-width: 400px;  /* Set a maximum width */
+    height: auto;  /* Maintain aspect ratio */
+    margin: 0 auto;  /* Center the video */
+  }
+
+  .carousel .item:first-child {
+    display: block;  /* Show the first video by default */
+  }
+
+  .carousel-nav {
+    background-color: #000;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  .carousel-nav:hover {
+    background-color: #555;
+  }
+
+  .icon.is-large {
+    font-size: 2em;
+  }
+</style>
+<script>
+  // JavaScript for video carousel
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.results-carousel .item');
+    const descriptionBox = document.getElementById('video-description');
+    let currentIndex = 0;
+
+    // Show the current item and update the description
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.toggle('active', index === currentIndex);
+      });
+      const currentItem = items[currentIndex];
+      descriptionBox.innerHTML = `<b>(${String.fromCharCode(97 + currentIndex)})</b> ` + currentItem.dataset.description;
+    }
+
+    // Set up the next button
+    document.getElementById('next-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel();
+    });
+
+    // Set up the previous button
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      updateCarousel();
+    });
+
+    // Initialize the carousel
+    updateCarousel();
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.item');
+    const taskDescriptions = [
+        "<b>(a) Continuous object-in-bowl:</b> the robot continuously picks a small toy, places it in a bowl, and resets the scene.",
+        "<b>(b) Groceries:</b> the robot picks a shopping bag via a thin handle and places all the chips inside.",
+        "<b>(c) Laundry:</b> the robot folds a polo shirt placed randomly on the table."
+    ];
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    const taskDescriptionEl = document.getElementById('video-description');
+
+    // Function to show the active video and update dots
+    function showVideo(index) {
+        items.forEach((item, i) => {
+            if (i === index) {
+                item.style.display = 'block';  // Show active item
+            } else {
+                item.style.display = 'none';   // Hide inactive items
+            }
+        });
+        // Update task description
+        taskDescriptionEl.innerHTML = taskDescriptions[index];
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Button event listeners
+    document.getElementById('prev-btn').addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;  // Move backward
+        showVideo(currentIndex);
+    });
+
+    document.getElementById('next-btn').addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % items.length;  // Move forward
+        showVideo(currentIndex);
+    });
+
+    // Dot event listeners
+    dots.forEach(dot => {
+        dot.addEventListener('click', function () {
+            currentIndex = parseInt(this.getAttribute('data-index'));
+            showVideo(currentIndex);
+        });
+    });
+
+    // Initialize the first video
+    showVideo(currentIndex);
+});
+
+</script>
 
 </body>
 </html>
