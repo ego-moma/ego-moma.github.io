@@ -112,12 +112,32 @@ body {
 
 .results-carousel {
   overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.results-carousel .carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none; /* allow clicks to pass except on buttons */
+}
+
+.results-carousel .carousel-controls .carousel-nav {
+  pointer-events: auto;
 }
 
 .results-carousel .item {
-  margin: 5px;
+  margin: 0;
   overflow: hidden;
-  border: 1px solid #bbb;
+  border: 0;
   border-radius: 10px;
   padding: 0;
   font-size: 0;
@@ -155,3 +175,50 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+
+/* --- Video slider --- */
+.video-slider {
+  position: relative;
+  width: 100%;
+  max-width: 960px;      /* tweak to taste */
+  margin: 2rem auto;
+  aspect-ratio: 16 / 9;  /* keeps a clean ratio */
+  overflow: hidden;
+  border-radius: 14px;
+  background: #000;
+}
+.video-slider .track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.video-slider .slide {
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+}
+.video-slider video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills the frame like the image demos */
+}
+
+/* arrows */
+.video-slider .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-radius: 999px;
+  user-select: none;
+}
+.video-slider .arrow:hover { background: rgba(0,0,0,0.6); }
+.video-slider .prev { left: 10px; }
+.video-slider .next { right: 10px; }
