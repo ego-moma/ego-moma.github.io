@@ -115,14 +115,14 @@ body {
   position: relative;
   width: 100%;
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 0 auto; /* remove extra top/bottom whitespace */
 }
 
 .results-carousel .carousel-controls {
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
+  left: -24px;  /* push left arrow outward */
+  right: -24px; /* push right arrow outward */
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
