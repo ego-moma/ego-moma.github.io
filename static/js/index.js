@@ -127,3 +127,75 @@ $(document).ready(function() {
   // Autoplay the first slide on load
   goTo(0);
 })();
+
+// Simple swapping carousel for `.results-carousel` using provided markup
+(function initResultsCarousel() {
+  document.addEventListener('DOMContentLoaded', function () {
+    const root = document.querySelector('.results-carousel');
+    if (!root) return;
+
+    const items = Array.from(root.querySelectorAll('.item'));
+    const dots = Array.from(root.querySelectorAll('.carousel-dots .dot'));
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const descriptionEl = document.getElementById('video-description');
+
+    if (!items.length || !prevBtn || !nextBtn || !descriptionEl) return;
+
+    let currentIndex = 0;
+
+    function update() {
+      items.forEach((item, i) => {
+        const video = item.querySelector('video');
+        if (i === currentIndex) {
+          item.style.display = 'block';
+          if (video) {
+            // Ensure autoplay/muted/loop behavior remains consistent
+            video.muted = true;
+            video.loop = true;
+            video.play().catch(() => {});
+          }
+        } else {
+          item.style.display = 'none';
+          if (video) {
+            video.pause();
+            video.currentTime = 0;
+          }
+        }
+      });
+
+      if (dots.length) {
+        dots.forEach((dot, i) => {
+          if (i === currentIndex) dot.classList.add('active');
+          else dot.classList.remove('active');
+        });
+      }
+
+      const activeItem = items[currentIndex];
+      const desc = activeItem ? activeItem.getAttribute('data-description') : '';
+      if (desc) descriptionEl.innerHTML = desc;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      update();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      update();
+    });
+
+    if (dots.length) {
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          update();
+        });
+      });
+    }
+
+    // Initialize
+    update();
+  });
+})();
