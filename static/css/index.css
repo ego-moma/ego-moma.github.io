@@ -121,17 +121,28 @@ body {
 .results-carousel .carousel-controls {
   position: absolute;
   top: 50%;
-  left: -24px;  /* push left arrow outward */
-  right: -24px; /* push right arrow outward */
+  left: -60px;  /* push left arrow further outward */
+  right: -60px; /* push right arrow further outward */
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  pointer-events: none; /* allow clicks to pass except on buttons */
+  pointer-events: none;
 }
 
 .results-carousel .carousel-controls .carousel-nav {
   pointer-events: auto;
+  background-color: #000;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  padding: 12px;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+.results-carousel .carousel-controls .carousel-nav:hover {
+  background-color: #555;
 }
 
 .results-carousel .item {
