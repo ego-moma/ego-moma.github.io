@@ -270,6 +270,15 @@
             </div>
 
             <!-- Navigation Buttons -->
+            <div class="carousel-dots">
+              <span class="dot" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+            </div>
+        
+
+            <!-- Navigation Buttons -->
             <div class="carousel-controls">
                 <button id="prev-btn" class="carousel-nav prev-button">
                     <span class="icon is-large"><i class="fas fa-chevron-left"></i></span>
@@ -363,7 +372,46 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
+          <br>
+          <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: In-domain Performance</span></h3>
 
+          <figure class="has-text-centered">
+            <img src="./static/figures/subtasks_comparisons.png" alt="main results " style="width: 100%; height: auto;"/>
+
+          </figure>     
+
+          </div>
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: Scaling</span></h3>
+        <h3 class="title is-5" align="center"><span class="dvima">Scaling hand data</data></span></h3>
+        <div class="columns is-centered">
+          <div>
+            <video autoplay muted loop height="75%">
+              <source src="static/videos/scaling_qual.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <h3 class="title is-5" align="center"><span class="dvima">Scaling human full-body motion data v/s scaling mobile robot teleop data</span></h3>
+        <img src="static/images/scaling_law.png" alt="" 
+        style="display: block; margin-left: auto; margin-right: auto; width: 60%; height: auto;" />
+        <br>
+        <div>
+          <span style="font-size: 110%">EgoMimic trained on 2
+            hours robot data + 1 hour hand data (Blue) strongly outperforms
+            ACT trained on 3 hours of robot data (Orange) in the <b>Continuous Object-in-Bowl</b> task. This shows that scaling hand data using our method outperforms 
+            scaling an equivalent amount of robot data.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
