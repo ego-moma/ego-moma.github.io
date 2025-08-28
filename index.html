@@ -322,7 +322,7 @@
 
 
     <!-- Method -->
-    <h2 class="title is-3" align="center"><span class="dvima"></span></h2>>Method</h2>
+    <h2 class="title is-3 has-text-centered"><span class="dvima">Method</span></h2>
     <h3 class="title is-5" align="center"><span class="dvima">A unified co-training framework</data></span></h3>
     <div class="has-text-centered" style="margin-top: 2rem;">
       <video poster="" autoplay muted controls loop height="100%">
@@ -363,7 +363,7 @@
       <figure class="has-text-centered">
         <img src="./static/figures/retargeting.jpg" alt="Retargeting figure" style="width: 100%; height: auto;"/>
         <figcaption class="has-text-grey is-size-6">
-          Given a 3D pose trajectory from a human demonstration, we optimize Eq. (retargeting) to compute a feasible 2D trajectory for a differential drive robot. This resulting trajectory can be directly executed by the robot or used as input for policy learning.
+          Given a 3D pose trajectory from a human demonstration, we compute a feasible 2D trajectory for a differential drive robot. This resulting trajectory can be directly executed by the robot or used as input for policy learning.
         </figcaption>
       </figure>
       <div class="has-text-centered" style="margin-top: 2rem;">
@@ -419,6 +419,15 @@
               We show that scaling mobile manipulation with human data outperforms scaling on mobile robot teleopreation data collected under an equivalent amount of time.
           </span>
         </div>
+
+        <h2 class="title is-3 has-text-centered"><span class="dvima">Conclusion</span></h2>
+        <span style="font-size: 110%">
+          In conclusion, we presented EMMA, a novel framework that enables mobile manipulation without requiring expensive mobile teleoperation. We find that EMMA outperforms Mobile ALOHA 
+          style teleoperation with equivalent data collection time and demonstrates superior scaling properties. Further, we ablate our key design decisions and observe that both the motion 
+          retargeter and the phase identification module are integral to downstream performance. Overall, we have demonstrated the possibility of scaling robot mobile manipulation performance 
+          with egocentric human data. We hope this result spurs new research and informs future researchers of potential opportunities and challenges.
+        </span>
+
       </div>
     </div>
   </div>
