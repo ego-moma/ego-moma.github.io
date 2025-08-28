@@ -321,7 +321,9 @@
     <!--/ Abstract. -->
 
 
-    <!-- Method Teaser Video -->
+    <!-- Method -->
+    <h2 class="title is-3">Method</h2>
+    <h3 class="title is-5" align="center"><span class="dvima">A unified co-training framework</data></span></h3>
     <div class="has-text-centered" style="margin-top: 2rem;">
       <video poster="" autoplay muted controls loop height="100%">
         <source src="./static/videos/method_teaser.mp4" type="video/mp4">
@@ -345,7 +347,7 @@
       </div>
     </div>
 
-
+    <h3 class="title is-5" align="center"><span class="dvima">Retargeting</data></span></h3>
     <div class="has-text-centered" style="margin-top: 2rem;">
       <video controls width="100%" height="auto">
         <source src="./static/videos/retargeting_teaser.mp4" type="video/mp4">
@@ -355,7 +357,9 @@
 
       <div class="columns is-centered">
     <div class="column is-four-fifths">
-      <h3 class="title is-3 has-text-centered">Retargeting</h3>
+
+
+
       <figure class="has-text-centered">
         <img src="./static/figures/retargeting.jpg" alt="Retargeting figure" style="width: 100%; height: auto;"/>
         <figcaption class="has-text-grey is-size-6">
@@ -378,7 +382,6 @@
       <div class="rows is-centered">
         <div class="row is-full-width">
           <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
-          <br>
           <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: In-domain Performance</span></h3>
 
           <figure class="has-text-centered">
@@ -390,31 +393,20 @@
         </div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
         <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: Scaling</span></h3>
-        <h3 class="title is-5" align="center"><span class="dvima">Scaling hand data</data></span></h3>
-        <div class="columns is-centered">
-          <div>
-            <video autoplay muted loop height="75%">
-              <source src="static/videos/scaling_qual.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
         <h3 class="title is-5" align="center"><span class="dvima">Scaling human full-body motion data v/s scaling mobile robot teleop data</span></h3>
         <img src="static/images/scaling_law.png" alt="" 
         style="display: block; margin-left: auto; margin-right: auto; width: 60%; height: auto;" />
         <br>
         <div>
-          <span style="font-size: 110%">EgoMimic trained on 2
-            hours robot data + 1 hour hand data (Blue) strongly outperforms
-            ACT trained on 3 hours of robot data (Orange) in the <b>Continuous Object-in-Bowl</b> task. This shows that scaling hand data using our method outperforms 
-            scaling an equivalent amount of robot data.</span>
+          <span style="font-size: 110%">
+            EMMA Trained on 1 hour human full-body motion data (Blue) stronly outperforms Mobile ALOHA trained on 1 hours of robot data (Orange) in the <b>Handover Wine<b> task. 
+              We show that scaling mobile manipulation with human data outperforms scaling on mobile robot teleopreation data collected under an equivalent amount of time.
+          </span>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
-
 
 
 <section class="section" id="BibTeX">
