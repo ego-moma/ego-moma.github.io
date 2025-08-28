@@ -249,34 +249,35 @@
 
             <!-- Video and description container -->
             <div class="item active" data-description="Handover Wine (SceneGen)">
-              <video autoplay muted loop height="75%">
+              <video autoplay muted loop style="width: 100%; height: auto;">
                 <source src="static/videos/handover_wine_sceneGen.mp4" type="video/mp4">
               </video>
             </div>
             <div class="item" data-description="Serve Croissant (Lab)">
-              <video autoplay muted loop height="75%"
+              <video autoplay muted loop style="width: 100%; height: auto;">
                 <source src="static/videos/serve_croissant_lab.mp4" type="video/mp4">
               </video>
             </div>
             <div class="item" data-description="Handover Wine (Lab)">
-              <video autoplay muted loop height="75%"
+              <video autoplay muted loop style="width: 100%; height: auto;">
                 <source src="static/videos/handover_wine_lab.mp4" type="video/mp4">
               </video>
             </div>
             <div class="item" data-description="Deliver Groceries">
-              <video autoplay muted loop>
+              <video autoplay muted loop style="width: 100%; height: auto;">
                 <source src="static/videos/deliver_groceries.mp4" type="video/mp4">
               </video>
             </div>
 
             <!-- Navigation Buttons -->
-            <div class="carousel-dots">
+                        <div class="carousel-dots">
               <span class="dot" data-index="0"></span>
               <span class="dot" data-index="1"></span>
               <span class="dot" data-index="2"></span>
               <span class="dot" data-index="3"></span>
             </div>
-        
+
+            <div id="video-description" style="font-size: 110%; text-align: center; margin-top: 15px;"></div>
 
             <!-- Navigation Buttons -->
             <div class="carousel-controls">
@@ -297,10 +298,10 @@
 
 <section class="section">
 
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
@@ -325,7 +326,7 @@
     <h2 class="title is-3 has-text-centered"><span class="dvima">Method</span></h2>
     <h3 class="title is-5" align="center"><span class="dvima">A unified co-training framework</data></span></h3>
     <div class="has-text-centered" style="margin-top: 2rem;">
-      <video poster="" autoplay muted controls loop height="100%">
+      <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
         <source src="./static/videos/method_teaser.mp4" type="video/mp4">
       </video>
     </div>
@@ -334,10 +335,10 @@
     </p>
     <!-- Figures -->
     <div class="columns is-centered">
-      <div class="column is-four-fifths">
+      <div class="column">
 
         <figure class="has-text-centered">
-          <img src="./static/figures/method_fig.jpg" alt="Method figure" style="width: 100%; height: auto;"/>
+          <img src="./static/figures/method_fig.jpg" alt="Method figure" style="width: 60%; height: auto;"/>
           <figcaption class="has-text-grey is-size-6">
             Left: Architecture of joint human-robot policy learning framework. Our model processes heterogeneous human and robot data through <em>stems</em> and decodes them through various action <em>heads</em>. The navigation head is deployed on the robot during evaluation, demonstrating transfer without robot supervision. Right: Our custom low-cost bimanual mobile manipulator.
           </figcaption>
@@ -349,13 +350,13 @@
 
     <h3 class="title is-5" align="center"><span class="dvima">Retargeting</data></span></h3>
       <figure class="has-text-centered">
-        <img src="./static/figures/retargeting.jpg" alt="Retargeting figure" style="width: 100%; height: auto;"/>
+        <img src="./static/figures/retargeting.jpg" alt="Retargeting figure" style="width: 60%; height: auto;"/>
         <figcaption class="has-text-grey is-size-6">
           Given a 3D pose trajectory from a human demonstration, we compute a feasible 2D trajectory for a differential drive robot. This resulting trajectory can be directly executed by the robot or used as input for policy learning.
         </figcaption>
       </figure>
       <div class="has-text-centered" style="margin-top: 2rem;">
-        <video poster="" autoplay muted controls loop height="100%">
+        <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
           <source src="./static/videos/retargeting_teaser.mp4" type="video/mp4">
         </video>
       </div>
@@ -365,69 +366,67 @@
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
+      <div class="column">
+    <div class="rows">
 
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
+          <h3 class="title is-4 has-text-centered"><span class="dvima">(A) In-domain Performance</span></h3>
 
-      <div class="rows">
-
-        <div class="rows is-centered">
-          <div class="row is-full-width">
-            <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
-            <h3 class="title is-4 has-text-centered"><span class="dvima">(A) In-domain Performance</span></h3>
-
-            <figure class="has-text-centered">
-              <img src="./static/figures/subtasks_comparisons.png" alt="main results" style="width: 100%; height: auto;"/>
-
-            </figure>     
-            <span style="font-size: 110%">
-            EMMA (blue), trained without mobile teleoperation data, significantly outperforms Mobile ALOHA (orange) on <em>Grocery Shopping</em> and 
-            <em>Handover Wine</em> tasks (p < 0.05). <em>Table Service</em> variants show comparable performance. Error bars represent 95% confidence intervals from 50 trials.
-            </span>
-            </div>
-          </div>
-
-          <h3 class="title is-5" align="center"><span class="dvima">(B) Scene Generalization</data></span></h3>
-          <div class="has-text-centered" style="margin-top: 2rem;">
-            <video poster="" autoplay muted controls loop height="100%">
-              <source src="./static/videos/sceneGen_data_and_rollout.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div>
-            <span style="font-size: 110%">
-            EMMA generalizes to new scenes by co-training on static robot data in original scene and human full-body motion data in new scene
-            </span>
-          </div>
-
-            <div class="columns is-centered">
-          <div class="column is-four-fifths">
-
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-          <h3 class="title is-4 has-text-centered"><span class="dvima">(C) Scaling</span></h3>
-          <h3 class="title is-5" align="center"><span class="dvima">Scaling human full-body motion data v/s scaling mobile robot teleop data</span></h3>
           <figure class="has-text-centered">
-            <img src="./static/figures/scaling_law.png" alt="main results" style="width: 100%; height: auto;"/>
+            <img src="./static/figures/subtasks_comparisons.png" alt="main results" style="width: 60%; height: auto;"/>
 
-          </figure>   
-          <br>
-          <div>
-            <span style="font-size: 110%">
-              EMMA Trained on 1 hour human full-body motion data (Blue) stronly outperforms Mobile ALOHA trained on 1 hours of robot data (Orange) in the <b>Handover Wine</b> task. 
-                We show that scaling mobile manipulation with human data outperforms scaling on mobile robot teleopreation data collected under an equivalent amount of time.
-            </span>
-          </div>
-
-          <h2 class="title is-3 has-text-centered"><span class="dvima">Conclusion</span></h2>
+          </figure>     
           <span style="font-size: 110%">
-            In conclusion, we presented EMMA, a novel framework that enables mobile manipulation without requiring expensive mobile teleoperation. We find that EMMA outperforms Mobile ALOHA 
-            style teleoperation with equivalent data collection time and demonstrates superior scaling properties. Further, we ablate our key design decisions and observe that both the motion 
-            retargeter and the phase identification module are integral to downstream performance. Overall, we have demonstrated the possibility of scaling robot mobile manipulation performance 
-            with egocentric human data. We hope this result spurs new research and informs future researchers of potential opportunities and challenges.
+          EMMA (blue), trained without mobile teleoperation data, significantly outperforms Mobile ALOHA (orange) on <em>Grocery Shopping</em> and 
+          <em>Handover Wine</em> tasks (p < 0.05). <em>Table Service</em> variants show comparable performance. Error bars represent 95% confidence intervals from 50 trials.
           </span>
-
+          </div>
         </div>
+
+        <h3 class="title is-5" align="center"><span class="dvima">(B) Scene Generalization</data></span></h3>
+        <div class="has-text-centered" style="margin-top: 2rem;">
+          <video poster="" autoplay muted controls loop style="width: 60%; height: auto;">
+            <source src="./static/videos/sceneGen_data_and_rollout.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div>
+          <span style="font-size: 110%">
+          EMMA generalizes to new scenes by co-training on static robot data in original scene and human full-body motion data in new scene
+          </span>
+        </div>
+
+          <div class="columns is-centered">
+        <div class="column">
+
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <h3 class="title is-4 has-text-centered"><span class="dvima">(C) Scaling</span></h3>
+        <h3 class="title is-5" align="center"><span class="dvima">Scaling human full-body motion data v/s scaling mobile robot teleop data</span></h3>
+        <figure class="has-text-centered">
+          <img src="./static/figures/scaling_law.png" alt="main results" style="width: 60%; height: auto;"/>
+
+        </figure>   
+        <br>
+        <div>
+          <span style="font-size: 110%">
+            EMMA Trained on 1 hour human full-body motion data (Blue) stronly outperforms Mobile ALOHA trained on 1 hours of robot data (Orange) in the <b>Handover Wine</b> task. 
+              We show that scaling mobile manipulation with human data outperforms scaling on mobile robot teleopreation data collected under an equivalent amount of time.
+          </span>
+        </div>
+
+        <h2 class="title is-3 has-text-centered"><span class="dvima">Conclusion</span></h2>
+        <span style="font-size: 110%">
+          In conclusion, we presented EMMA, a novel framework that enables mobile manipulation without requiring expensive mobile teleoperation. We find that EMMA outperforms Mobile ALOHA 
+          style teleoperation with equivalent data collection time and demonstrates superior scaling properties. Further, we ablate our key design decisions and observe that both the motion 
+          retargeter and the phase identification module are integral to downstream performance. Overall, we have demonstrated the possibility of scaling robot mobile manipulation performance 
+          with egocentric human data. We hope this result spurs new research and informs future researchers of potential opportunities and challenges.
+        </span>
+
       </div>
     </div>
   </div>
@@ -435,7 +434,7 @@
 
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
+  <div class="container is-max-widescreen content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{PLACEHOLDER
 }</code></pre>
@@ -460,46 +459,7 @@
 
 
 <!-- Custom Script for Button-based Carousel -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll('.item');
-    const taskDescriptions = [
-      "<b>(a) Continuous object-in-bowl:</b> the robot continuously picks a small toy, places it in a bowl, and resets the scene.",
-      "<b>(b) Groceries:</b> the robot picks a shopping bag via a thin handle and places all the chips inside.",
-      "<b>(c) Laundry:</b> the robot folds a polo shirt placed randomly on the table."
-    ];
 
-    let currentIndex = 0;
-    const taskDescriptionEl = document.getElementById('taskDescription');
-    
-    // Function to show the active video and hide others
-    function showVideo(index) {
-      items.forEach((item, i) => {
-        if (i === index) {
-          item.style.display = 'block';  // Show active item
-        } else {
-          item.style.display = 'none';   // Hide inactive items
-        }
-      });
-      // Update task description
-      taskDescriptionEl.innerHTML = taskDescriptions[index];
-    }
-
-    // Button event listeners
-    document.getElementById('prevBtn').addEventListener('click', function () {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;  // Move backward
-      showVideo(currentIndex);
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', function () {
-      currentIndex = (currentIndex + 1) % items.length;  // Move forward
-      showVideo(currentIndex);
-    });
-
-    // Initialize the first video
-    showVideo(currentIndex);
-  });
-</script>
 
 <!-- Basic Styling to ensure all videos are controlled and responsive -->
 <style>
