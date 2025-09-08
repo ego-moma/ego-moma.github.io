@@ -319,9 +319,9 @@
         <source src="./static/videos/method_teaser.mp4" type="video/mp4">
       </video>
     </div>
-    <p>
+    <div class="content has-text-justified">
       EMMA: The model cotrains human fullbody motion data with static robot data. and outputs a unified policy that enables mobile manipulation deployment without mobile robot teleoperation.
-    </p>
+    </div>
     <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
     <!-- Figures -->
     <div class="columns is-centered">
@@ -372,10 +372,10 @@
             <img src="./static/figures/subtasks_comparisons.png" alt="main results" style="width: 100%; height: auto;"/>
 
           </figure>     
-          <span style="font-size: 110%">
+          <div class="content has-text-justified" style="font-size: 110%">
           EMMA (blue), trained without mobile teleoperation data, significantly outperforms Mobile ALOHA (orange) on <em>Grocery Shopping</em> and 
           <em>Handover Wine</em> tasks (p < 0.05). <em>Table Service</em> variants show comparable performance. Error bars represent 95% confidence intervals from 50 trials.
-          </span>
+          </div>
           </div>
         </div>
 
@@ -386,10 +386,8 @@
             Your browser does not support the video tag.
           </video>
         </div>
-        <div>
-          <span style="font-size: 110%">
+        <div class="content has-text-justified" style="font-size: 110%">
           EMMA generalizes to new scenes by co-training on static robot data in original scene and human full-body motion data in new scene
-          </span>
         </div>
 
           <div class="columns is-centered">
@@ -403,11 +401,9 @@
 
         </figure>   
         <br>
-        <div>
-          <span style="font-size: 110%">
-            EMMA Trained on 1 hour human full-body motion data (Blue) strongly outperforms Mobile ALOHA trained on 1 hours of robot data (Orange) in the <b>Handover Wine</b> task. 
-              We show that scaling mobile manipulation with human data outperforms scaling on mobile robot teleopreation data collected under an equivalent amount of time.
-          </span>
+        <div class="content has-text-justified" style="font-size: 110%">
+          EMMA Trained on 1 hour human full-body motion data (Blue) strongly outperforms Mobile ALOHA trained on 1 hours of robot data (Orange) in the <b>Handover Wine</b> task. 
+          We show that scaling mobile manipulation with human data outperforms scaling on mobile robot teleopreation data collected under an equivalent amount of time.
         </div>
 
 
@@ -424,12 +420,12 @@
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3 has-text-centered"><span class="dvima">Conclusion</span></h2>
-        <span style="font-size: 110%">
+        <div class="content has-text-justified" style="font-size: 110%">
           In conclusion, we presented EMMA, a novel framework that enables mobile manipulation without requiring expensive mobile teleoperation. We find that EMMA outperforms Mobile ALOHA 
           style teleoperation with equivalent data collection time and demonstrates superior scaling properties. Further, we ablate our key design decisions and observe that both the motion 
           retargeter and the phase identification module are integral to downstream performance. Overall, we have demonstrated the possibility of scaling robot mobile manipulation performance 
           with egocentric human data. We hope this result spurs new research and informs future researchers of potential opportunities and challenges.
-        </span>
+        </div>
       </div>
     </div>
   </div>
@@ -505,12 +501,6 @@
   .icon.is-large {
     font-size: 2em;
   }
-</style>
-<style>
-  /* Left-align all non-caption text */
-  body :not(figure).has-text-centered { text-align: left !important; }
-  body :not(figure).has-text-justified { text-align: left !important; }
-  figcaption, figure.has-text-centered, figure.has-text-centered * { text-align: center !important; }
 </style>
 <script>
   // JavaScript for video carousel
