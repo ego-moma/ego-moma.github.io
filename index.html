@@ -506,6 +506,12 @@
     font-size: 2em;
   }
 </style>
+<style>
+  /* Left-align all non-caption text */
+  body :not(figure).has-text-centered { text-align: left !important; }
+  body :not(figure).has-text-justified { text-align: left !important; }
+  figcaption, figure.has-text-centered, figure.has-text-centered * { text-align: center !important; }
+</style>
 <script>
   // JavaScript for video carousel
   document.addEventListener('DOMContentLoaded', () => {
